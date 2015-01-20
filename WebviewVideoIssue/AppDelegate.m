@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "WebView.h"
+#import "YAKWebView.h"
 
 #import <ECSlidingViewController/ECSlidingViewController.h>
 
@@ -28,7 +28,7 @@
 
 -(UIViewController *)configuredRootViewController
 {
-    WebView *webView = [WebView new];
+    YAKWebView *webView = [YAKWebView new];
     webView.url = [NSURL URLWithString:@"https://www.youtube.com/watch?v=vSkb0kDacjs&autoplay=1"];
     
     MenuTableViewController *menuViewController = [MenuTableViewController new];

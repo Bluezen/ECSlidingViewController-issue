@@ -7,28 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		057192731A5F661A00227027 /* WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 057192721A5F661A00227027 /* WebView.m */; };
+		057192731A5F661A00227027 /* YAKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 057192721A5F661A00227027 /* YAKWebView.m */; };
 		05AD490E1A369F1500FDB812 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AD490D1A369F1500FDB812 /* main.m */; };
 		05AD49111A369F1500FDB812 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AD49101A369F1500FDB812 /* AppDelegate.m */; };
 		05AD491C1A369F1500FDB812 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05AD491B1A369F1500FDB812 /* Images.xcassets */; };
 		05AD491F1A369F1500FDB812 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05AD491D1A369F1500FDB812 /* LaunchScreen.xib */; };
-		05AD492B1A369F1500FDB812 /* WebviewVideoIssueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AD492A1A369F1500FDB812 /* WebviewVideoIssueTests.m */; };
 		B07765C554FD6B0107FB16FC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8A79A802B8B96ADB882AE7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		05AD49251A369F1500FDB812 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05AD49001A369F1500FDB812 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 05AD49071A369F1500FDB812;
-			remoteInfo = WebviewVideoIssue;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		057192711A5F661A00227027 /* WebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebView.h; sourceTree = "<group>"; };
-		057192721A5F661A00227027 /* WebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebView.m; sourceTree = "<group>"; };
+		057192711A5F661A00227027 /* YAKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAKWebView.h; sourceTree = "<group>"; };
+		057192721A5F661A00227027 /* YAKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAKWebView.m; sourceTree = "<group>"; };
 		05AD49081A369F1500FDB812 /* WebviewVideoIssue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebviewVideoIssue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AD490C1A369F1500FDB812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05AD490D1A369F1500FDB812 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -36,9 +25,6 @@
 		05AD49101A369F1500FDB812 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		05AD491B1A369F1500FDB812 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		05AD491E1A369F1500FDB812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		05AD49241A369F1500FDB812 /* WebviewVideoIssueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebviewVideoIssueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		05AD49291A369F1500FDB812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05AD492A1A369F1500FDB812 /* WebviewVideoIssueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebviewVideoIssueTests.m; sourceTree = "<group>"; };
 		6050B9BFF6593B1A062D49B3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6D8A79A802B8B96ADB882AE7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA961415F75B2793D5EBD47 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -53,13 +39,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		05AD49211A369F1500FDB812 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,7 +46,6 @@
 			isa = PBXGroup;
 			children = (
 				05AD490A1A369F1500FDB812 /* WebviewVideoIssue */,
-				05AD49271A369F1500FDB812 /* WebviewVideoIssueTests */,
 				05AD49091A369F1500FDB812 /* Products */,
 				F5C156A85710A988A0B57F48 /* Pods */,
 				9979E00CAC78D221C9C9690C /* Frameworks */,
@@ -78,7 +56,6 @@
 			isa = PBXGroup;
 			children = (
 				05AD49081A369F1500FDB812 /* WebviewVideoIssue.app */,
-				05AD49241A369F1500FDB812 /* WebviewVideoIssueTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,8 +65,8 @@
 			children = (
 				05AD490F1A369F1500FDB812 /* AppDelegate.h */,
 				05AD49101A369F1500FDB812 /* AppDelegate.m */,
-				057192711A5F661A00227027 /* WebView.h */,
-				057192721A5F661A00227027 /* WebView.m */,
+				057192711A5F661A00227027 /* YAKWebView.h */,
+				057192721A5F661A00227027 /* YAKWebView.m */,
 				05AD491B1A369F1500FDB812 /* Images.xcassets */,
 				05AD491D1A369F1500FDB812 /* LaunchScreen.xib */,
 				05AD490B1A369F1500FDB812 /* Supporting Files */,
@@ -102,23 +79,6 @@
 			children = (
 				05AD490C1A369F1500FDB812 /* Info.plist */,
 				05AD490D1A369F1500FDB812 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		05AD49271A369F1500FDB812 /* WebviewVideoIssueTests */ = {
-			isa = PBXGroup;
-			children = (
-				05AD492A1A369F1500FDB812 /* WebviewVideoIssueTests.m */,
-				05AD49281A369F1500FDB812 /* Supporting Files */,
-			);
-			path = WebviewVideoIssueTests;
-			sourceTree = "<group>";
-		};
-		05AD49281A369F1500FDB812 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				05AD49291A369F1500FDB812 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -162,24 +122,6 @@
 			productReference = 05AD49081A369F1500FDB812 /* WebviewVideoIssue.app */;
 			productType = "com.apple.product-type.application";
 		};
-		05AD49231A369F1500FDB812 /* WebviewVideoIssueTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 05AD49311A369F1500FDB812 /* Build configuration list for PBXNativeTarget "WebviewVideoIssueTests" */;
-			buildPhases = (
-				05AD49201A369F1500FDB812 /* Sources */,
-				05AD49211A369F1500FDB812 /* Frameworks */,
-				05AD49221A369F1500FDB812 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				05AD49261A369F1500FDB812 /* PBXTargetDependency */,
-			);
-			name = WebviewVideoIssueTests;
-			productName = WebviewVideoIssueTests;
-			productReference = 05AD49241A369F1500FDB812 /* WebviewVideoIssueTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -192,10 +134,6 @@
 					05AD49071A369F1500FDB812 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = A9DC5UMVVQ;
-					};
-					05AD49231A369F1500FDB812 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 05AD49071A369F1500FDB812;
 					};
 				};
 			};
@@ -213,7 +151,6 @@
 			projectRoot = "";
 			targets = (
 				05AD49071A369F1500FDB812 /* WebviewVideoIssue */,
-				05AD49231A369F1500FDB812 /* WebviewVideoIssueTests */,
 			);
 		};
 /* End PBXProject section */
@@ -225,13 +162,6 @@
 			files = (
 				05AD491F1A369F1500FDB812 /* LaunchScreen.xib in Resources */,
 				05AD491C1A369F1500FDB812 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		05AD49221A369F1500FDB812 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,28 +206,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				05AD49111A369F1500FDB812 /* AppDelegate.m in Sources */,
-				057192731A5F661A00227027 /* WebView.m in Sources */,
+				057192731A5F661A00227027 /* YAKWebView.m in Sources */,
 				05AD490E1A369F1500FDB812 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		05AD49201A369F1500FDB812 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				05AD492B1A369F1500FDB812 /* WebviewVideoIssueTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		05AD49261A369F1500FDB812 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 05AD49071A369F1500FDB812 /* WebviewVideoIssue */;
-			targetProxy = 05AD49251A369F1500FDB812 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		05AD491D1A369F1500FDB812 /* LaunchScreen.xib */ = {
@@ -417,40 +331,6 @@
 			};
 			name = Release;
 		};
-		05AD49321A369F1500FDB812 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WebviewVideoIssueTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebviewVideoIssue.app/WebviewVideoIssue";
-			};
-			name = Debug;
-		};
-		05AD49331A369F1500FDB812 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WebviewVideoIssueTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebviewVideoIssue.app/WebviewVideoIssue";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -468,15 +348,6 @@
 			buildConfigurations = (
 				05AD492F1A369F1500FDB812 /* Debug */,
 				05AD49301A369F1500FDB812 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		05AD49311A369F1500FDB812 /* Build configuration list for PBXNativeTarget "WebviewVideoIssueTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				05AD49321A369F1500FDB812 /* Debug */,
-				05AD49331A369F1500FDB812 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

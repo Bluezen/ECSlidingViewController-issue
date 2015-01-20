@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 Adrien Long. All rights reserved.
 //
 
-#import "WebView.h"
+#import "YAKWebView.h"
 #import <WebKit/WebKit.h>
 #import <ECSlidingViewController/UIViewController+ECSlidingViewController.h>
 
-@interface WebView ()
+@interface YAKWebView ()
 @property (nonatomic, strong) WKWebView *view;
 @end
 
-@implementation WebView
+@implementation YAKWebView
 @dynamic view;
 @synthesize url=_url;
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface WebView : UIViewController
+@interface YAKWebView : UIViewController
 
 @property (nonatomic, strong) NSURL *url;
 

@@ -8,38 +8,77 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+#import "WebView.h"
 
-@end
+#import <ECSlidingViewController/ECSlidingViewController.h>
+
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [self configuredRootViewController];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
+-(UIViewController *)configuredRootViewController
+{
+    WebView *webView = [WebView new];
+    webView.url = [NSURL URLWithString:@"https://www.youtube.com/watch?v=vSkb0kDacjs&autoplay=1"];
+    
+    MenuTableViewController *menuViewController = [MenuTableViewController new];
+    
+    
+    UINavigationController *topViewController = [[UINavigationController alloc] initWithRootViewController:webView];
+    
+    ECSlidingViewController *slidingViewController = [ECSlidingViewController slidingWithTopViewController:topViewController];
+    slidingViewController.underLeftViewController  = menuViewController;
+    slidingViewController.anchorRightRevealAmount  = 270.0;
+    slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGesturePanning | ECSlidingViewControllerAnchoredGestureTapping;
+    
+
+    [topViewController.view addGestureRecognizer:slidingViewController.panGesture];
+    
+    return slidingViewController;
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+@end
+
+
+
+
+@implementation MenuTableViewController
+static NSString *tableViewCellReuseId = @"reuseID";
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [[self tableView] registerClass:[UITableViewCell class] forCellReuseIdentifier:tableViewCellReuseId];
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCellReuseId forIndexPath:indexPath];
+    
+    [cell.textLabel setText:@"Label"];
+    
+    return cell;
+}
 @end

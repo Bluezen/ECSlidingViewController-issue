@@ -1,6 +1,8 @@
 # ECSlidingViewController 2.0.3 - issue
 This repository is a demo of an issue with html5 videos not playing correctly in a `WKWebView` after using the pan gesture of `ECSlidingViewController` (in its `2.0.3` version).
 
+![gif](http://f.cl.ly/items/271Q3N1M450I2s1i1d2c/Screen%20Recording%202015-01-20%20at%2003.21%20PM.gif)
+
 ## Installation
 
 You must have [cocoapods installed](http://guides.cocoapods.org/using/getting-started.html).
@@ -27,7 +29,8 @@ The issue has something to do with the last lines in
 ``` 
 of `ECSlidingViewController.m` but I can't get what. 
 
-Instead of the commit above you could only dispatch on the main queue the following lines (at the end of ànimateOperation:`) to get the same results:
+Instead of the commit above you could only dispatch on the main queue the following lines (at the end of 
+`animateOperation:`) to get the same results:
 ``` objc
 dispatch_async(dispatch_get_main_queue(), ^{
     if ([self isInteractive]) {

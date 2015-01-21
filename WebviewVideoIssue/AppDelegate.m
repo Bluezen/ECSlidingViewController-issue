@@ -8,9 +8,10 @@
 
 #import "AppDelegate.h"
 
-#import "YAKWebView.h"
+#import "YAKWebViewController.h"
 
 #import <ECSlidingViewController/ECSlidingViewController.h>
+#import <ECSlidingViewController/UIViewController+ECSlidingViewController.h>
 
 
 @implementation AppDelegate
@@ -28,15 +29,13 @@
 
 -(UIViewController *)configuredRootViewController
 {
-    YAKWebView *webView = [YAKWebView new];
-    webView.url = [NSURL URLWithString:@"https://www.youtube.com/watch?v=vSkb0kDacjs&autoplay=1"];
+    UIViewController *menuViewController = [MenuTableViewController new];
     
-    MenuTableViewController *menuViewController = [MenuTableViewController new];
+    UIViewController *topViewController = [MainNaviguationController new];
     
+    UINavigationController *wrapperNavigationController = [[UINavigationController alloc] initWithRootViewController:topViewController];
     
-    UINavigationController *topViewController = [[UINavigationController alloc] initWithRootViewController:webView];
-    
-    ECSlidingViewController *slidingViewController = [ECSlidingViewController slidingWithTopViewController:topViewController];
+    ECSlidingViewController *slidingViewController = [ECSlidingViewController slidingWithTopViewController:wrapperNavigationController];
     slidingViewController.underLeftViewController  = menuViewController;
     slidingViewController.anchorRightRevealAmount  = 270.0;
     slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGesturePanning | ECSlidingViewControllerAnchoredGestureTapping;
@@ -50,6 +49,68 @@
 @end
 
 
+@implementation MainNaviguationController
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self setIsWKWebView:YES];
+    
+    UIBarButtonItem *menuButton =
+    [[UIBarButtonItem alloc]
+     initWithTitle:@"Menu" style:UIBarButtonItemStylePlain
+     target:self
+     action:@selector(menuButtonTapped:)];
+    
+    [self.navigationItem setLeftBarButtonItem:menuButton];
+    
+    UIBarButtonItem *switchButton =
+    [[UIBarButtonItem alloc]
+     initWithTitle:@"Switch" style:UIBarButtonItemStylePlain
+     target:self
+     action:@selector(switchButtonTapped:)];
+    
+    [self.navigationItem setRightBarButtonItem:switchButton];
+}
+
+-(void)setIsWKWebView:(BOOL)isWKWebView
+{
+    for (UIViewController *vc in self.childViewControllers) {
+        [vc.view removeFromSuperview];
+        [vc removeFromParentViewController];
+    }
+    
+    YAKWebViewController *webView = [[YAKWebViewController alloc] initAsShinyNewWebView:isWKWebView];
+    webView.url = [NSURL URLWithString:@"https://www.youtube.com/watch?v=vSkb0kDacjs&autoplay=1"];
+    
+    [self addChildViewController:webView];
+    [self.view addSubview:webView.view];
+    [webView didMoveToParentViewController:self];
+    
+    if (isWKWebView) {
+        [self.navigationItem setTitle:@"WKWebView"];
+    } else {
+        [self.navigationItem setTitle:@"UIWebView"];
+    }
+}
+
+- (void)menuButtonTapped:(id)sender
+{
+    [self.slidingViewController anchorTopViewToRightAnimated:YES];
+}
+
+- (void)switchButtonTapped:(id)sender
+{
+    YAKWebViewController *vc = self.childViewControllers.firstObject;
+    if ([vc.view isKindOfClass:[UIWebView class]]) {
+        [self setIsWKWebView:YES];
+    } else {
+        [self setIsWKWebView:NO];
+    }
+}
+
+@end
 
 
 @implementation MenuTableViewController

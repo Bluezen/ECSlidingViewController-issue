@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface YAKWebView : UIViewController
+@interface YAKWebViewController : UIViewController
 
 @property (nonatomic, strong) NSURL *url;
+
+-(id)initAsShinyNewWebView:(BOOL)isWKWebView;
 
 @end

@@ -1,7 +1,7 @@
 # ECSlidingViewController 2.0.3 - issue
 This repository is a demo of an issue with html5 videos not playing correctly in a `WKWebView` after using the pan gesture of `ECSlidingViewController` (in its `2.0.3` version).
 
-![gif](http://f.cl.ly/items/271Q3N1M450I2s1i1d2c/Screen%20Recording%202015-01-20%20at%2003.21%20PM.gif)
+![gif](http://cl.ly/image/3e1N2N2l341p/Screen%20Recording%202015-01-21%20at%2004.47%20PM.gif)
 
 ## Installation
 
@@ -18,7 +18,10 @@ You must first run `pod install` in the directory of the source code then use th
 * Result: The video keeps playing as we can hear the sound going on but the image froze.
 * Expected result: the video keeps playing correctly.
 
-Note:  If you open the menu by touching the '+' button the issue is not happening. The issue happens with any html5 video playing inline. If you run this demo on an iPhone you won't see the issue as the webpage I chose will open the video in fullscreen.
+Notes:  
+* If you open the menu by touching the --Menu-- button the issue is not happening, the image of the video won't freeze. 
+* The issue happens with any html5 video playing inline. Toggling the fullscreen mode will unfroze the video if launch the Apple media player. If you run this demo on an iPhone you won't see the issue as the video will automaticaly be played in fullscreen with Apple media player.
+* The issue occurs only with `WKWebView`, everything is allright with `UIWebView`, you can switch the webview by touching the --Switch-- button to try it out.
 
 ## Quick fix
 You can use commit [74b55f84291bc1868171888a3a7de282fff39021](https://github.com/ECSlidingViewController/ECSlidingViewController/commit/74b55f84291bc1868171888a3a7de282fff39021) as a quick fix but it has a bad side effect: it breaks the interactivity of the animation to open the menu. 
@@ -27,7 +30,7 @@ The issue has something to do with the last lines in
 ```objc 
 - (void)animateOperation:(ECSlidingViewControllerOperation)operation
 ``` 
-of `ECSlidingViewController.m` but I can't get what. 
+of `ECSlidingViewController.m` but I can't get to the root of the problem. 
 
 Instead of the commit above you could only dispatch on the main queue the following lines (at the end of 
 `animateOperation:`) to get the same results:

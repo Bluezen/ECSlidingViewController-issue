@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		057192731A5F661A00227027 /* YAKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 057192721A5F661A00227027 /* YAKWebView.m */; };
+		057192731A5F661A00227027 /* YAKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 057192721A5F661A00227027 /* YAKWebViewController.m */; };
 		05AD490E1A369F1500FDB812 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AD490D1A369F1500FDB812 /* main.m */; };
 		05AD49111A369F1500FDB812 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AD49101A369F1500FDB812 /* AppDelegate.m */; };
 		05AD491C1A369F1500FDB812 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05AD491B1A369F1500FDB812 /* Images.xcassets */; };
@@ -16,8 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		057192711A5F661A00227027 /* YAKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAKWebView.h; sourceTree = "<group>"; };
-		057192721A5F661A00227027 /* YAKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAKWebView.m; sourceTree = "<group>"; };
+		057192711A5F661A00227027 /* YAKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAKWebViewController.h; sourceTree = "<group>"; };
+		057192721A5F661A00227027 /* YAKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAKWebViewController.m; sourceTree = "<group>"; };
 		05AD49081A369F1500FDB812 /* WebviewVideoIssue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebviewVideoIssue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AD490C1A369F1500FDB812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05AD490D1A369F1500FDB812 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,8 +65,8 @@
 			children = (
 				05AD490F1A369F1500FDB812 /* AppDelegate.h */,
 				05AD49101A369F1500FDB812 /* AppDelegate.m */,
-				057192711A5F661A00227027 /* YAKWebView.h */,
-				057192721A5F661A00227027 /* YAKWebView.m */,
+				057192711A5F661A00227027 /* YAKWebViewController.h */,
+				057192721A5F661A00227027 /* YAKWebViewController.m */,
 				05AD491B1A369F1500FDB812 /* Images.xcassets */,
 				05AD491D1A369F1500FDB812 /* LaunchScreen.xib */,
 				05AD490B1A369F1500FDB812 /* Supporting Files */,
@@ -206,7 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05AD49111A369F1500FDB812 /* AppDelegate.m in Sources */,
-				057192731A5F661A00227027 /* YAKWebView.m in Sources */,
+				057192731A5F661A00227027 /* YAKWebViewController.m in Sources */,
 				05AD490E1A369F1500FDB812 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,13 +248,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
@@ -264,6 +262,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "";
 			};
 			name = Debug;
 		};
@@ -289,8 +288,10 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
@@ -300,6 +301,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "";
 			};
 			name = Release;
 		};

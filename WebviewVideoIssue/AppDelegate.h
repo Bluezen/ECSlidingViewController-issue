@@ -14,6 +14,9 @@
 
 @end
 
+@interface MainNaviguationController : UIViewController
+@end
+
 @interface MenuTableViewController : UITableViewController
 @end
 
